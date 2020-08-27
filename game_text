@@ -1,0 +1,62 @@
+print("Ready to play?")
+heroName = input("What is your hero name? ")
+age = int(input("How old are you? "))
+print("Hello", heroName, ",You are", age, "years old")
+
+age_older = int(age) >= 18
+
+health = 10
+
+if(age >= 18):
+  print("You can play")
+  want_to_play = input("Do you want to play? ").lower()
+  if want_to_play == "yes":
+    print("You are starting with", health, "health")
+    print("Lets go!")
+
+    first_choice = input("Your hero radar is going off! will you go or stay at base?(Stay or go) ").lower()
+    if first_choice == "go":
+
+      ans = input("So, you decided the path of the hero eh? You arrive at the scene and see the villian. Do you flee or fight? (Flee/flight)").lower()
+
+      if ans == "fight":
+        print("You caught the villain off guard by punching him in the face.")
+
+      elif ans == "flee":
+        print("The villian caught you and threw a snare trap to prevent your escape ")
+        health -= 5
+        print("You now have", health, "health")
+
+
+      ans = input("The villain reacts by throwing a kick. Do you dodge or block? (dodge/block)").lower()
+
+      if ans == "dodge":
+        print("The villain misses and allows you to set up a counter attack")
+
+      else:
+        print("You underestimated the villians kick and got knocked out.")
+        health -= 0
+
+        if health <= 0:
+          print("You have lost the game, try again!")
+      ans = input("The perfect opportunity has opened up! do you go for the takedown or attempt to conversate with the villian? (takedown/conversate)")
+      if ans == "takedown":
+        print("You have succesfully taken down the villian and saved the day! Thank you", heroName)
+      else:
+        print("Your attempts for diplomacy have failed, the villian takes the final blow and put you to sleep! Game over!")
+        health -= 0
+
+        if health <= 0:
+          print("You have lost the game, try again!")
+
+
+    else:
+      print("Failure! You have neglected your duty.")
+
+
+
+  else:
+    print("Canceling game")  
+else:
+  print("You are not old enough! Try again next year.")
+  
